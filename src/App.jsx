@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar'
 import User from './pages/User'
 import Book from './pages/Book'
 import Board from './pages/Board'
+import Setting from './pages/Setting'
 import styles from './App.module.scss'
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/user" element={<User />} />
           <Route path="/book" element={<Book />} />
           <Route path="/board" element={<Board />} />
+          <Route path="/setting" element={<Setting />} />
         </Routes>
       </main>
     </div>

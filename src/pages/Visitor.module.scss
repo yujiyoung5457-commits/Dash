@@ -178,12 +178,29 @@
     margin-left: 0;
     grid-template-columns: 1fr;
   }
+
+  .bottomLine,
+  .end { margin-top: 1rem; }
 }
 
 @media (max-width: 900px) {
   .topLine {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
+}
+
+@media (max-width: 600px) {
+  .mainTitle { font-size: 1.75rem; }
+  .topLine > section,
+  .bottomLine > section,
+  .end > section { padding: 1rem; }
+  .sectionTitle { flex-direction: column; }
+  .chartCanvas,
+  .barCanvas { height: 260px; min-height: 260px; }
+  .rankingItem button { grid-template-columns: 2rem minmax(0, 1fr) auto; }
+  .rankingItem button span:last-child { display: none; }
+  .rankingItem dl > div { grid-template-columns: 4.5rem minmax(0, 1fr); }
 }
 .rankingItem [data-accordion-detail] {
   height: 0;

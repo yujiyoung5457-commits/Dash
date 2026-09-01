@@ -185,3 +185,35 @@ td{
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 1100px) {
+    .progressList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .first { width: 100%; }
+    .here { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .firstWrap,
+    .Rader,
+    .book { width: 100%; }
+    .book { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+    .harf { width: 100%; }
+    .harf .topLine { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+    .mainTitle { font-size: 1.75rem; }
+    .progressList,
+    .here { grid-template-columns: 1fr; gap: 1rem; }
+    .first { padding: 1.25rem; }
+    .firstWrap,
+    .Rader,
+    .book { grid-column: auto; height: auto; min-height: 22rem; margin-top: 0; padding: 1rem; }
+    .harf { margin-top: 1rem; }
+    .searchArea { flex-direction: column; gap: 1rem; }
+    .searchArea select { width: 100%; min-height: 2.5rem; }
+    .bookArea { flex-direction: column; gap: 1rem; }
+    .bookimg,
+    .dec { width: 100%; }
+    .bookimg { min-height: 12rem; }
+}

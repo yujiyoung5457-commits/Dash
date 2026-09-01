@@ -3,8 +3,6 @@ import boardData from './data/boardData.json'
 import { Helmet } from 'react-helmet-async'
 import styles from './Board.module.scss'
 
-
-
 const reviewData=boardData.reviewData
 const feedData=boardData.feedData
 /*
@@ -36,16 +34,19 @@ const Board = () => {
   const [feedKey, setFeedKey]=useState('')
   const [feedState, setFeedState]=useState('전체')
   //이벤트 피드 검색 부분-------------------------
-  const filterFeed=feedData.filter((item)=>{
-    const word=feedKey.trim().toLocaleLowerCase()
-    const searchWord=item.title.toLocaleLowerCase().includes(word)||
-     item.content.toLocaleLowerCase().includes(word)
+  const filterFeed = feedData.filter((item) => {
+  const word = feedKey.trim().toLocaleLowerCase();
 
-     const searchSelect= feedState==='전체'||
-     item.status===feedState
+  const searchWord =
+    item.title.toLocaleLowerCase().includes(word) ||
+    item.content.toLocaleLowerCase().includes(word);
 
-     return feedKey && searchSelect
-  })
+  const searchSelect =
+    feedState === '전체' ||
+    item.status === feedState;
+
+  return searchWord && searchSelect;
+});
   
   //이벤트 피드 기능들 공개.비공개/ 수정삭제
   const feedStateChange=(id)=>{
@@ -75,6 +76,9 @@ const saveFeed=()=>{
 const delfeed=(id)=>{
   setFeeds(feeds.filter((item)=>item.id !== id))
 }
+
+
+
   return (
     <>
     <Helmet>
@@ -149,17 +153,17 @@ const delfeed=(id)=>{
             </section>
 
             <section className={styles.mainBox3}>
-              <div>
+              <div className={styles.block}>
                 <div>
                   <h3>이벤트 피드 관리</h3>
-                  <p>서비스 이벤트 게시판을 관리합니다.</p>
+                  <p className={styles.smallTT}>서비스 이벤트 게시판을 관리합니다.</p>
                 </div>
                 <span>
-                  {}건
+                  {feedState}건
                 </span>
               </div>
 
-                <div>
+                <div className={styles.block2}>
                   <input type="text" placeholder='이벤트 검색' value={feedKey} onChange={(e)=>setFeedKey(e.target.value)}/>
 
                   <select value={feedState} onChange={(e)=>setFeedState(e.target.value)}>
@@ -170,7 +174,7 @@ const delfeed=(id)=>{
                 </div>
 
 
-                <div>
+                <div className={styles.cards}>
                   {
                     filterFeed.map((item)=>(
                       <div key={item.id}>
@@ -182,14 +186,18 @@ const delfeed=(id)=>{
                           </div>
 
                           <div>{item.content}</div>
-                          <div>{item.startDate}~{item.endDate}</div>
+                          
+                          <div className={styles.btns}>
+                            <div>{item.startDate}~{item.endDate}</div>
+                            <div className={styles.btnn}>
+                              <button onClick={()=>feedStateChange(item.id)}>{item.status==='공개' ? '비공개' :'공개'}</button>
+                              <button onClick={()=>openFeedEvent(item)}>수정</button>
+                              <button onClick={()=>delfeed(item.id)}>삭제</button>
+                          </div>
+                        </div>
                         </div>
 
-                        <div className={styles.btns}>
-                          <button onClick={()=>feedStateChange(item.id)}>{item.status==='공개' ? '비공개' :'공개'}</button>
-                          <button onClick={()=>openFeedEvent(item)}>수정</button>
-                          <button onClick={()=>delfeed(item.id)}>삭제</button>
-                        </div>
+                        
                       </div>
                     ))
                   }

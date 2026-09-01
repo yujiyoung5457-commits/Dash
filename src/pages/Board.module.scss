@@ -114,7 +114,7 @@ justify-content: center;
     background-color: white;
     border: 1px solid rgb(182, 184, 194);
     border-radius: 8px;
-    height: 300px;
+    height: 750px;
     padding: 1.5rem;
     flex: 1;
     min-width: 0;
@@ -129,4 +129,94 @@ justify-content: center;
     .mainBox3{
         width: 100%;
     }
+
+    .boardRow { gap: 1rem; }
+}
+.smallTT{
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.block2{
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    input{
+        width:80%;
+        padding: 0.5rem;
+        border: 1px solid rgb(152, 184, 233);
+        border-radius: 25px;
+    }
+    select{
+        width: 30%;
+        background-color: rgb(64, 94, 228);
+    border-radius: 25px;
+    padding: 0.5rem 2rem ;
+    color: white;
+        text-align: center;
+    }
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.feedWrap{
+    border: 1px solid rgb(152, 184, 233);
+    border-radius: 25px;
+    padding: 1rem;
+
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid red;
+    gap: 0.5rem;
+    button{
+    background-color:white;
+    border-radius: 25px;
+    padding: 0.3rem 1.2rem ;
+    color: rgb(64, 94, 228);
+    transition: all 0.3s;
+     border: 1px solid rgb(64, 94, 228);
+    &:hover{
+        background-color: rgb(64, 94, 228);
+        color: white;
+    }
+    }
+    
+}
+.btnn{
+    display: flex;
+    gap: 0.5rem;
+}
+.feedtitle{
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .mainBox h2 { font-size: 1.75rem; }
+    .mainBox2,
+    .mainBox3 { padding: 1rem; height: auto; min-height: 0; }
+    .form,
+    .block2 { flex-direction: column; gap: 1rem; }
+    .form input,
+    .form select,
+    .block2 input,
+    .block2 select,
+    .flexBox { width: 100%; }
+    .block { align-items: flex-start; flex-direction: column; gap: 1rem; }
+    .tree { display: block; overflow-x: auto; white-space: nowrap; }
+    .btns { justify-content: flex-start; flex-wrap: wrap; }
+    .btns button { padding-inline: 0.9rem; }
+    .modal { position: fixed; padding: 1rem; }
+    .modal .modalBox { width: 100%; max-width: 500px; height: auto; min-height: 300px; }
+    .modal .modalBox button { position: static; margin-top: 1rem; }
 }

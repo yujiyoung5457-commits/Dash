@@ -15,3 +15,21 @@
   margin-left: 15rem;
   padding: 2rem;
 }
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 1rem;
+  }
+}

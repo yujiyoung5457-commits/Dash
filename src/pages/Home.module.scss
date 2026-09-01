@@ -101,7 +101,22 @@
 
     .detailCharts {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
+
+    .wrapBox { gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+    .maintitle { font-size: 1.75rem; }
+    .chartBox,
+    .overviewChart,
+    .detailChart { padding: 1rem; }
+    .btnBox { justify-content: flex-start; overflow-x: auto; padding: 0; }
+    .btn1 { flex: 0 0 auto; padding: 0.45rem 0.8rem; }
+    .mainCanvas { height: 300px; }
+    .pieCanvas,
+    .barCanvas { height: 280px; }
 }
 .smalltt{
     font-size: 0.8rem;
