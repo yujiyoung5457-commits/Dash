@@ -173,7 +173,7 @@ td{
 .bookimg{
     width: calc(100%/2);
     object-fit: contain;
-    background-image: url(./public/img/book.png);
+    background-image: url('/img/book.png');
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 8px;
