@@ -1,0 +1,17 @@
+.app {
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  min-height: calc(100vh - 70px);
+  /* Page background: change this value to adjust the area outside cards/sidebar. */
+  background-color: #f5f6fa;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 15rem;
+  padding: 2rem;
+}

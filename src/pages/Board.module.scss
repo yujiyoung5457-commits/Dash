@@ -1,0 +1,132 @@
+
+
+.mainBox{
+    width: 100%;
+    h2{
+    color:rgb(64, 94, 228) ;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    }
+    p{
+        margin-bottom: 2rem;
+    }
+    display: flex;
+}
+.boardRow{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.mainBox2{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(182, 184, 194);
+    background-color: white;
+    border-radius: 8px;
+    gap: 1rem;
+    padding: 1.5rem;
+    p{
+       font-size: 0.8rem; 
+       margin-bottom: 1rem;
+    }
+}
+
+.form{
+    display: flex;
+    gap: 1.5rem;
+    input{
+        width:80%;
+        padding: 0.5rem;
+        border: 1px solid rgb(152, 184, 233);
+        border-radius: 25px;
+    }
+    select{
+        width: 30%;
+        background-color: rgb(64, 94, 228);
+    border-radius: 25px;
+    padding: 0.5rem 2rem ;
+    color: white;
+        text-align: center;
+    }
+}
+
+.tree{
+    tr{
+       text-align: center;
+      
+    }
+    td{
+        padding: 0.5rem 1rem;
+    }
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+position: absolute;
+top: 0;
+left: 0;
+background-color: rgba($color: #000000, $alpha: 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+
+.modalBox{
+    background-color: white;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 8px;
+    width: 500px;
+    height: 300px;
+    padding: 1.5rem;
+
+    p{
+        color:rgb(64, 94, 228) ;
+        font-size: 1rem;
+    }
+    h3{
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-bottom: 2rem;
+    }
+    button{
+        position: absolute;
+        right: 38%;
+        top: 35%;
+    }
+}
+}
+.flexBox{
+    display: flex;
+    gap: 1rem;
+    width:80%;
+        padding: 0.5rem;
+        border: 1px solid rgb(152, 184, 233);
+        border-radius: 25px;
+        margin-bottom: 1rem;
+}
+
+.mainBox3{
+    background-color: white;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 8px;
+    height: 300px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 900px){
+    .boardRow{
+        flex-direction: column;
+    }
+
+    .mainBox2,
+    .mainBox3{
+        width: 100%;
+    }
+}

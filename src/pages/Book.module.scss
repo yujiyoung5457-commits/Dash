@@ -1,0 +1,207 @@
+.wrap{
+    display: flex;
+}
+.smalltt{
+    margin-bottom: 2rem;
+}
+.mainTT{
+    color:rgb(64, 94, 228) ;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.layout{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    width: 84vw;
+}
+.buttons{
+    border-bottom: 1px solid rgb(152, 184, 233);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+     button{
+        padding: 0.5rem;
+        border: 1px solid rgb(152, 184, 233);
+        border-radius: 25px;
+    }
+}
+.week{
+    padding: 0.8rem 2rem;
+    background-color: white ;
+    border-bottom: 1px solid rgb(152, 184, 233);
+}
+.colum{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(182, 184, 194);
+    width:100%;
+    background-color: white;
+    border-radius: 8px;
+    gap: 1rem;
+}
+.btnCategory{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    width:100%;
+    background-color: white;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius:0 0 8px 8px;
+    padding: 1.5rem;
+}
+.center{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.inner{
+    width:100%;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 8px;
+    background-color: white;
+}
+// BubbleOptions의 maintainAspectRatio: false가 이 높이를 기준으로 동작한다.
+// 고정 높이가 있어야 화면 크기가 바뀌어도 차트가 무한히 세로로 늘어나지 않는다.
+.bubbleChart{
+    position: relative;
+    height: 320px;
+    padding: 1rem;
+}
+.see{
+    padding: 1.5rem;
+    // border: 1px solid rgb(174, 0, 255);
+    display: flex;
+    gap: 2rem;
+    img{
+        width: 8rem;
+        height: 10rem;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+.three{
+    display: flex;
+}
+.buttonStyle{
+    padding: 0.5rem;
+    border: 1px solid rgb(152, 184, 233);
+    border-radius: 25px;
+}
+.blueTitle{
+    background-color: rgb(64, 94, 228);
+    border-radius: 8px 8px 0 0;
+    padding: 0.5rem 2rem ;
+    color: white;
+}
+.rankList{
+    
+    padding: 1rem;
+    .bookimg{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        border-bottom: 1px solid rgb(152, 184, 233);
+        padding: 0.6rem;
+    }
+    strong{
+        color:rgb(64, 94, 228) ;
+        font-size: 1.1rem;
+    }
+    img{
+        width: 8rem;
+        height: 10rem;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .notSTR{
+        color: #222;
+    }
+    .bookDec{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+.right{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form{
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    input{
+        width:80%;
+        padding: 0.5rem;
+        border: 1px solid rgb(152, 184, 233);
+        border-radius: 25px;
+    }
+    button{
+        background-color: rgb(64, 94, 228);
+    border-radius: 25px;
+    padding: 0.5rem 2rem ;
+    color: white;
+    }
+}
+.bb, .five, .rose{
+    width:100%;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 8px;
+    background-color: white;
+}
+.innerFive {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.innerFive > * {
+  width: calc((100% - 2rem) / 3);
+
+  
+}
+
+.mediaItem {
+  position: relative;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+}
+
+.circleCenter {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  pointer-events: none;
+
+  strong {
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0.2rem 0 0;
+  }
+}

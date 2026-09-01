@@ -1,0 +1,108 @@
+.btn1{
+    padding: 0.5rem 1.2rem;
+    background-color:rgb(64, 94, 228) ;
+    border-radius: 8px;
+    color: white;
+    transition: all 0.3s;
+    &:hover{
+        font-weight: bold;
+        transform: translateY(-0.2rem);
+    }
+}
+.btnBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0 0.9rem;
+}
+// 안 눌린 버튼
+.btn1 {
+  border: 1px solid rgb(64, 94, 228);
+  background-color: white;
+  color: rgb(64, 94, 228);
+}
+
+// 현재 선택된 버튼
+.active {
+  border: 1px solid rgb(64, 94, 228);
+  background-color: rgb(64, 94, 228);
+  color: white;
+}
+.maintitle{
+    color:rgb(64, 94, 228) ;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.smalltitle{
+    padding-bottom: 1rem;
+}
+.chartBox{
+    border: 1px solid rgb(182, 184, 194);
+    min-width: 0;
+    padding: 1.25rem;
+    border-radius: 10px;
+    background-color: white;
+}
+.wrapBox{
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.overviewChart {
+    min-width: 0;
+    min-height: 0;
+    padding: 1.25rem;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.mainCanvas {
+    position: relative;
+    height: 460px;
+    margin-top: 1rem;
+}
+
+.detailCharts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.detailChart {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid rgb(182, 184, 194);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.pieCanvas,
+.barCanvas {
+    position: relative;
+    height: 320px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .wrapBox {
+        grid-template-columns: 1fr;
+    }
+
+    .mainCanvas {
+        height: 360px;
+    }
+
+    .detailCharts {
+        grid-template-columns: 1fr;
+    }
+}
+.smalltt{
+    font-size: 0.8rem;
+}
