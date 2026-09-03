@@ -113,19 +113,38 @@
 
 .all{
     margin-top: 0.5rem;
-    background-color: orange;
+    // background-color: orange;
+    font-weight: bold;
     text-align: left;
     padding: 1rem;
-    border-radius: 8px;
+    tr{
+        border-radius: 25px;
+    }
+    th{
+        // padding: 0.3rem 0.5rem;
+        // border-radius: 25px;
+    }
 }
 td{
     border-bottom: 1px solid #ccc;
 }
 .wrapW{
-    // border: 1px solid red;
+    // border: 1px solid rgb(0, 47, 255);
     margin-top: 1rem;
+    
+    table{
+        
+        width: 100%;
+        thead{
+            // border: 1px solid red;
+            padding: 1rem;
+            border-radius: 25px;
+        }
+    }
 }
-
+td{
+    font-weight: 300;
+}
 .Rader{
      width: calc(95%/3);
     height: 24rem;

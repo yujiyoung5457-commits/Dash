@@ -92,6 +92,7 @@
 }
 .three{
     display: flex;
+    flex-direction: column;
 }
 .buttonStyle{
     padding: 0.5rem;
@@ -205,6 +206,24 @@ form{
     margin: 0.2rem 0 0;
   }
 }
+.bookTT{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+.bookA{
+    margin-bottom: 0.7rem;
+}
+.ctgr{
+    display: flex;
+}
+.price{
+    display: flex;
+}
+.page{
+    display: flex;
+}
+
 
 @media (max-width: 1200px) {
     .layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }

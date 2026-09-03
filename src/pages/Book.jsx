@@ -444,19 +444,19 @@ const polaOptions = {
                             <div className={styles.see}>
                                 <img src={selectBook.image} alt={selectBook.title} />
                                 <div>
-                                    <h3>{selectBook.title}</h3>
-                                    <p>{selectBook.author}</p>
+                                    <h3 className={styles.bookTT}>{selectBook.title}</h3>
+                                    <p className={styles.bookA}>{selectBook.author}</p>
                                     <dl className={styles.three}>
-                                        <div>
-                                            <dt>카테고리</dt>
+                                        <div className={styles.ctgr}>
+                                            <dt>카테고리: &nbsp; </dt>
                                             <dd>{selectBook.category}</dd>
                                         </div>
-                                         <div>
-                                            <dt>가격</dt>
+                                         <div className={styles.price}>
+                                            <dt>가격: &nbsp;</dt>
                                             <dd>{selectBook.price.toLocaleString()}원</dd>
                                         </div>
-                                         <div>
-                                            <dt>페이지</dt>
+                                         <div className={styles.page}>
+                                            <dt>페이지: &nbsp;</dt>
                                             <dd>{selectBook.pages}페이지</dd>
                                         </div>
                                     </dl>

@@ -5,6 +5,13 @@ import styles from './Board.module.scss'
 
 const reviewData=boardData.reviewData
 const feedData=boardData.feedData
+const reviewCards = [
+  { id: 1, image: '/8.jpg', book: '불편한 편의점', user: '@yujy03님', text: '독창적인 스토리가 너무...' },
+  { id: 2, image: '/1.jpg', book: '싯다르타', user: '@may55님', text: '무슨 내용이었는지...' },
+  { id: 3, image: '/7.jpg', book: '아몬드', user: '@ppsom님', text: '읽으면서 묘한...' },
+  { id: 4, image: '/6.jpg', book: '돈의 흐름을 읽는 법', user: '@money12님', text: '경제를 이해하기 좋았어요...' },
+  { id: 5, image: '/5.jpg', book: '단어가 품은 세계', user: '@word77님', text: '문장이 오래 기억에 남아요...' },
+]
 /*
 useEffect(()=>{
   fetch('/data/board.json')
@@ -19,6 +26,15 @@ const Board = () => {
   const [reviewKeyword, setReviewKeyword]=useState('')
   const [selectReview, setSelectReview]=useState('전체')
   const [selectDatas, setSelectDatas]=useState(null)
+  const [reviewSlide, setReviewSlide]=useState(0)
+
+  const moveReviewSlide = (direction) => {
+    setReviewSlide((current) => (current + direction + reviewCards.length) % reviewCards.length)
+  }
+  const visibleReviewCards = Array.from(
+    { length: Math.min(3, reviewCards.length) },
+    (_, index) => reviewCards[(reviewSlide + index) % reviewCards.length],
+  )
 
   //리뷰검색
   const filterReviw=reviewData.filter((item)=>{
@@ -107,6 +123,7 @@ const delfeed=(id)=>{
           </div>
 
           <div className={styles.boardRow}>
+            <div className={styles.reviewColumn}>
             <section className={styles.mainBox2}>
                 <div>
                   <h2>리뷰 관리 게시판</h2>
@@ -151,7 +168,28 @@ const delfeed=(id)=>{
                   </tbody>
                 </table>
             </section>
-
+            {/* ---------------------------2번째 칸 */}
+            <section  className={styles.secondsection}>
+              <button type="button" className={styles.slideButton} onClick={() => moveReviewSlide(-1)} aria-label="이전 리뷰">‹</button>
+              <div className={styles.sliderViewport}>
+                <div className={styles.sliderTrack} key={reviewSlide}>
+                  {visibleReviewCards.map((review) => (
+                    <div className={styles.slide} key={review.id}>
+                      <article className={styles.card}>
+                        <img src={review.image} alt={`${review.book} 리뷰 이미지`} />
+                        <div className={styles.white}>
+                          <h2>{review.book}</h2>
+                          <h4>{review.user}</h4>
+                          <p>{review.text}</p>
+                        </div>
+                      </article>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button type="button" className={styles.slideButton} onClick={() => moveReviewSlide(1)} aria-label="다음 리뷰">›</button>
+            </section>
+            </div>
             <section className={styles.mainBox3}>
               <div className={styles.block}>
                 <div>
