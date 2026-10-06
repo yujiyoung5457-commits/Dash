@@ -18,7 +18,7 @@ const Visitor = () => {
         {name:'검색',value:42, },
         {name:'직접방문',value:22, },
         {name:'SNS',value:82, },
-        {name:'외부링트',value:10, },
+        {name:'외부링크',value:10, },
     ])
 
     const refreshFunc=()=>{
